@@ -1,7 +1,16 @@
 //to do
 const router = require("express").Router();
 const { Autocorrect } = require("../../models");
-const withAuth = require("../utils/auth");
+const withAuth = require("../../utils/auth");
+
+router.get("/", async (req, res) => {
+  try {
+    const autocorrectData = await Autocorrect.findAll();
+    return res.json(autocorrectData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.post("/", withAuth, async (req, res) => {
   try {
