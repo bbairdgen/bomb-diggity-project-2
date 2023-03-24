@@ -16,7 +16,6 @@ Total.init(
       },
       autocorrectid: {
           type: DataTypes.INTEGER,
-          allowNull: false,
           references: {
             model:'autocorrect',
             key: 'id',
