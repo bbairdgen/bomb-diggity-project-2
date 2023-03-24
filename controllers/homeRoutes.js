@@ -4,26 +4,10 @@ const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
-    const userData = await User.findAll();
-    return res.json(userData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get("/", async (req, res) => {
-  try {
-    const totalData = await Total.findAll();
-    return res.json(totalData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get("/", async (req, res) => {
-  try {
-    const autocorrectData = await Autocorrect.findAll();
-    return res.json(autocorrectData);
+    console.log("hey hey hey");
+    res.render("homepage", {
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
