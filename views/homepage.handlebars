@@ -1,1 +1,19 @@
 <div>hello</div>
+
+<div class="row mt-4">
+  {{#if autocorrects.length}}
+    <h2>horse!</h2>
+    <div class="col-md-6 correction-list">
+      <h3>all autocrrects</h3>
+      {{#each autocorrects as |autocorrect|}}
+        <div class="row mb-2">
+          <div class="col-md-8">
+            <h4><a
+                href="/autocorrects/{{autocorrect.id}}"
+              >{{autocorrect.correction}}</a></h4>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>
