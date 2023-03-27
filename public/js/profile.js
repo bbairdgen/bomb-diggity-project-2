@@ -2,7 +2,7 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const typo = document.querySelector("#typo").value.trim();
-  const usage = document.querySelector("#usage").value.trim();
+  const timesused = document.querySelector("#usage").value.trim();
   const correction = document.querySelector("#correction").value.trim();
 
   if (typo && correction) {
@@ -14,6 +14,21 @@ const newFormHandler = async (event) => {
       },
     });
 
+    if (response.ok) {
+      document.location.replace("/profile");
+    } else {
+      alert("Failed to create project");
+    }
+  }
+
+  if (timesused) {
+    const response = await fetch(`/api/totals`, {
+      method: "POST",
+      body: JSON.stringify({ timesused, autocorrect_id, user_id }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     if (response.ok) {
       document.location.replace("/profile");
     } else {

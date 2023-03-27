@@ -12,6 +12,16 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/:id", async (req, res) => {
+  try {
+    const autocorrectData = await Autocorrect.findByPk(req.params.id);
+    const autocorrect = autocorrectData.get({ plain: true });
+    return res.json(autocorrect);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.post("/", withAuth, async (req, res) => {
   try {
     const newAutocorrect = await Autocorrect.create({
