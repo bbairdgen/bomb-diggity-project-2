@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.post("/", withAuth, async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const newTotal = await Total.create({
       ...req.body,
