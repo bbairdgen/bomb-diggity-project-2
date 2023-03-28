@@ -5,6 +5,7 @@ const newFormHandler = async (event) => {
   const timesused = document.querySelector("#usage").value.trim();
   const correction = document.querySelector("#correction").value.trim();
 
+
   if (typo && correction) {
     const response = await fetch(`/api/autocorrects`, {
       method: "POST",
@@ -37,26 +38,17 @@ const newFormHandler = async (event) => {
   }
 };
 
-// const delButtonHandler = async (event) => {
-//   if (event.target.hasAttribute("data-id")) {
-//     const id = event.target.getAttribute("data-id");
+function showCorrections(event){
+  event.preventDefault();
 
-//     const response = await fetch(`/api/projects/${id}`, {
-//       method: "DELETE",
-//     });
-
-//     if (response.ok) {
-//       document.location.replace("/profile");
-//     } else {
-//       alert("Failed to delete project");
-//     }
-//   }
-// };
+  document.location.replace("/")
+}
 
 document
   .querySelector(".new-autocorrect-form")
   .addEventListener("submit", newFormHandler);
 
+document.querySelector(".show-cor").addEventListener("click", showCorrections)
 // document
 //   .querySelector(".project-list")
 //   .addEventListener("click", delButtonHandler);
