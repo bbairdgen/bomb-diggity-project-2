@@ -4,8 +4,13 @@ const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
+    const autocorrectData = await Autocorrect.findAll({});
+    const autocorrects = autocorrectData.map((auto) =>
+      auto.get({ plain: true })
+    );
     res.render("homepage", {
       logged_in: req.session.logged_in,
+      autocorrects,
     });
   } catch (err) {
     res.status(500).json(err);
