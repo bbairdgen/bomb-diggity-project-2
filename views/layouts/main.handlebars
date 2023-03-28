@@ -9,9 +9,21 @@
   </head>
   <body class="purple lighten-4 flow-text">
     <header>
-      <h1>CORRECTO😎</h1>
+      <h1>🤖 CORRECTORINGO 🤖</h1>
+      <div class="form-group">
+        {{#if logged_in}}
+          <a href="/profile">profile</a>
+          |
+          <button class="no-button" id="logout">logout</button>
+        {{else}}
+          <a href="/login">login</a>
+        {{/if}}
+
+      </div>
     </header>
     <main>{{{body}}}</main>
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
   </body>
-
 </html>
