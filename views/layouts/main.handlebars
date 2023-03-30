@@ -20,14 +20,17 @@
       </div>
       <div class="form-group">
         {{#if logged_in}}
-          <a href="/profile" class="blue-grey darken-1 white-text">Profile</a>
+          <a
+            href="/profile"
+            class="no-button blue-grey darken-1 white-text"
+          >Profile</a>
           |
           <button
             class="no-button blue-grey darken-1 white-text"
             id="logout"
           >Logout</button>
         {{else}}
-          <a href="/login" class="blue-grey darken-1">Login</a>
+          <a href="/login" class="no-button blue-grey darken-1">Login</a>
         {{/if}}
 
       </div>
