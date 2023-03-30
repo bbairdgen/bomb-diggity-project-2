@@ -1,4 +1,4 @@
-# Autocorrect Anonymouse
+# Autocorrect Anonymous
 
 ## Description
 
@@ -20,25 +20,22 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+No installation is required to run the application. You may however need to install a separate product to add these autocorrect shortcuts to you use them on your system. 
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+The homepage will list all of the autocorrects that have ever been created on the site. To add a new autocorrect, you will need to login and then add the autocorrect information from the profile page. 
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+Once you have added your autocorrect, you will find it added to the table on the main page. 
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+This site was created by:
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+- [Ian Hall](https://github.com/Ian-Halll)
+- [Taran Leu](https://github.com/J3rkStore)
+- [Kyle Simmons](https://github.com/lord-xld3)
+- [Brandon Baird](https://github.com/bbairdgen)
 
 ## License
 
