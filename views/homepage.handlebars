@@ -1,22 +1,29 @@
-<div>hello</div>
+
 
 <div class="row mt-4">
   {{#if autocorrects.length}}
     <div class="col-md-6 correction-list">
-      <h3>all autocorrects</h3>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">All Autocorrects😎🤙</span>
+            </div>
+          </div>
+        </div>
+      </div>
       {{#each autocorrects as |autocorrect|}}
 
-        <div class="row mb-2">
-          <div class="col-md-8">
-            <h4><a
+        <div class="collection">
+          
+            <a
                 href="/api/autocorrects/{{autocorrect.id}}"
               >{{autocorrect.typo}}|{{autocorrect.correction}}
               </a>
-            </h4>
-
-          </div>
+            
         </div>
       {{/each}}
     </div>
   {{/if}}
 </div>
+
